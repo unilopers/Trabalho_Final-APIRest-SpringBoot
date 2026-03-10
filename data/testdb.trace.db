@@ -1,0 +1,6 @@
+2026-03-09 21:18:49.701764-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * [*]CANTORES"; SQL statement:
+SELECT * CANTORES [42000-232]
+2026-03-09 21:19:04.335573-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * [*]NOME"; SQL statement:
+SELECT * NOME [42000-232]
