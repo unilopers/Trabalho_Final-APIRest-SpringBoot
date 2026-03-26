@@ -1,5 +1,6 @@
 package com.example.demo.model.service;
 
+import com.example.demo.async.CantorAsyncService;
 import com.example.demo.model.entity.Cantor;
 import com.example.demo.model.entity.Contato;
 import com.example.demo.model.entity.Genero;
@@ -14,11 +15,15 @@ import java.util.List;
 public class CantorService {
 
     @Autowired
+    private CantorAsyncService cantorAsyncService;
+
+    @Autowired
     private CantorRepository cantorRepository;
 
-    public boolean criarCantor(@RequestBody Cantor cantor) {
-        cantorRepository.save(cantor);
-        return true;
+    public void criarCantor(@RequestBody Cantor cantor) {
+        Cantor salvo = cantorRepository.save(cantor);
+
+        cantorAsyncService.processarPosCadastro(salvo.getId());
     }
 
     public List<Cantor> getCantores() {
