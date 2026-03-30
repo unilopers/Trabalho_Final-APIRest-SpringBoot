@@ -4,7 +4,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CantorAsyncService {
+public class CantorAsyncService_Ana {
 
     @Async
     public void processarCantor(String nome) {
