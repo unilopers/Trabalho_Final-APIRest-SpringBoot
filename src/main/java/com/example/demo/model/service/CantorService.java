@@ -1,6 +1,6 @@
 package com.example.demo.model.service;
 
-import com.example.demo.async.CantorAsyncService_Giovana;
+import com.example.demo.async.CantorAsyncService;
 import com.example.demo.model.entity.Cantor;
 import com.example.demo.model.entity.Contato;
 import com.example.demo.model.entity.Genero;
@@ -15,7 +15,7 @@ import java.util.List;
 public class CantorService {
 
     @Autowired
-    private CantorAsyncService_Giovana cantorAsyncService;
+    private CantorAsyncService cantorAsyncService;
 
     @Autowired
     private CantorRepository cantorRepository;
