@@ -13,15 +13,15 @@ import java.util.List;
 public class CantorService {
 
     @Autowired
-    private CantorRepository cantorRepository;
+    private CantorAsyncServiceMaria cantorAsyncServiceMaria;
 
     @Autowired
-    private CantorAsyncServiceMaria cantorAsyncService;
+    private CantorRepository cantorRepository;
 
     public boolean criarCantor(Cantor cantor) {
-        cantorRepository.save(cantor);
+        Cantor salvo = cantorRepository.save(cantor);
 
-        cantorAsyncService.processarNovoCantor(cantor.getNome());
+        cantorAsyncServiceMaria.processarNovoCantor(salvo.getNome());
 
         return true;
     }
